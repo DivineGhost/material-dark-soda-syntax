@@ -94,11 +94,15 @@ atom-text-editor {
   color: @magenta;
 
   &.syntax--character.syntax--escape {
-    color: @magenta;
+    color: @red;
+  }
+
+  &.syntax--character{
+    color: @red;
   }
 
   &.syntax--numeric {
-    color: @magenta;
+    color: @yellow;
   }
 
   &.syntax--other.syntax--color {
@@ -107,6 +111,14 @@ atom-text-editor {
 
   &.syntax--other.syntax--symbol {
     color: @green;
+  }
+
+  &.syntax--other.syntax--general{
+    color: @red;
+  }
+
+  &.syntax--other.syntax--reference{
+    color: @yellow;
   }
 
   &.syntax--other {
@@ -175,8 +187,17 @@ atom-text-editor {
 
 .syntax--punctuation {
   &.syntax--definition {
+
+    &.syntax--constant{
+      color: @red;
+    }
+
     &.syntax--comment {
       color: @gray;
+    }
+
+    &.syntax--table{
+      color: @red;
     }
 
     &.syntax--string,
@@ -217,7 +238,7 @@ atom-text-editor {
   }
 
   &.syntax--function  {
-    color: @cyan;
+    color: @red;
 
     &.syntax--any-method {
       color: @cyan;
@@ -290,7 +311,7 @@ atom-text-editor {
   color: @yellow;
 }
 .syntax--string.syntax--definition.syntax--punctuation {
-  color: @yellow;
+  color: @red;
 }
 /*.syntax--less, .syntax--scss, .syntax--css,  {
 }*/
