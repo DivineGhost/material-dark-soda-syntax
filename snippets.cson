@@ -1,0 +1,91 @@
+'.source.coffee':
+    'New-Snippet':
+        'prefix': 'snippet'
+        'body': """
+            '$1':
+                'prefix': '$2'
+                'body': $3
+        """
+
+'.text.tex.latex':
+    'ANBT-Figures':
+        'prefix': 'figure'
+        'body': """
+            \\\\begin{figure}[H]
+                \\\\centering
+                \\\\caption{Caption}
+                \\\\includegraphics[width=\\\\textwidth]{img/$1} \\\\\\\\
+                \\\\footnotesize{Fonte: }
+                \\\\label{fig:}
+            \\\\end{figure}
+        """
+
+    'Circuitikz':
+        'prefix': 'ctikz'
+        'body': """
+            \\\\begin{center}
+                \\\\begin{tikzpicture}
+                    \\\\draw
+                        $1
+                    ;
+                \\\\end{tikzpicture}
+            \\\\end{center}
+        """
+
+    'Minipage-Circuitikz':
+        'prefix': 'minipage-ctikz'
+        'body': """
+            \\\\noindent\\\\begin{minipage}{\\\\textwidth}
+            \\\\centering
+            \\\\begin{minipage}[c][5cm][c]{\\\\dimexpr0.45\\\\textwidth\\\\relax}
+                \\\\begin{center}
+                    \\\\begin{tikzpicture}
+                        \\\\draw
+                        $1
+                    ;
+                    \\\\end{tikzpicture}
+                \\\\end{center}
+            \\\\end{minipage} \\\\hfill
+            \\\\begin{minipage}[c][5cm][c]{\\\\dimexpr0.1\\\\textwidth\\\\relax}
+                $$\\\\iff$$
+            \\\\end{minipage} \\\\hfill
+            \\\\begin{minipage}[c][5cm][c]{\\\\dimexpr0.45\\\\textwidth\\\\relax}
+                \\\\begin{center}
+                    \\\\begin{tikzpicture}
+                        \\\\draw
+                        $2
+                    ;
+                    \\\\end{tikzpicture}
+                \\\\end{center}
+            \\\\end{minipage}
+            \\\\end{minipage}
+        """
+
+    'Minipage-Simple':
+        'prefix': 'minipages'
+        'body': """
+            \\\\noindent\\\\begin{minipage}{\\\\textwidth}
+            \\\\centering
+            \\\\begin{minipage}[c][5cm][c]{\\\\dimexpr0.5\\\\textwidth\\\\relax}
+                $1
+            \\\\end{minipage} \\\\hfill
+            \\\\begin{minipage}[c][5cm][c]{\\\\dimexpr0.5\\\\textwidth\\\\relax}
+                $2
+            \\\\end{minipage}
+            \\\\end{minipage}
+        """
+    'New-Command':
+        'prefix': 'newcommand'
+        'body': '\\\\newcommand{\\\\$1}[$2]{\\\\$3}'
+
+    'Comp Bold Face':
+        'prefix': 'textbf'
+        'body': '\\\\textbf{$1}'
+
+    'Comp Italic':
+        'prefix': 'textit'
+        'body': '\\\\textit{$1}'
+
+    'Comp Display Frac':
+        'prefix': 'dfrac'
+        'body': '\\\\dfrac{$1}{$2}'
